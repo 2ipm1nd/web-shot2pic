@@ -1,3 +1,15 @@
+    - name: Cache Playwright browsers
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/ms-playwright/
+        key: ${{ runner.os }}-browsers
+    - name: Install extra fonts
+      run: |
+        sudo apt-get install fonts-arphic-ukai fonts-arphic-uming fonts-ipafont-mincho fonts-ipafont-gothic fonts-unfonts-core
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
 - url: https://forum.gamer.com.tw/C.php?bsn=60606&snA=4468
   output: shot.png
   height: 800
